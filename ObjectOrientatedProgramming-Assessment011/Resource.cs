@@ -18,8 +18,8 @@ namespace ObjectOrientatedProgramming_Assessment011
         public Dictionary<string, int> Effect(Dictionary<string, int> petStats) //activate the effect of the item
         {
             petStats["Health"] += HealthModifier;
-            petStats["Hunger"] += HealthModifier;
-            petStats["Mood"] += HealthModifier;
+            petStats["Hunger"] += HungerModifier;
+            petStats["Mood"] += MoodModifier;
             return petStats;
         }
     }

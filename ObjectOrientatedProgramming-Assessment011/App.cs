@@ -34,7 +34,11 @@ namespace ObjectOrientatedProgramming_Assessment011
             {
                 rooms.Add(new Room()); //create a single room on app start, and load it (index 0)
 
-                # region - create shop
+                #region - create shop
+                shop.Add(new Toy("Ball", 5, 10, 0, 20));
+                shop.Add(new Toy("Stick", 1, 5, 0, 10));
+                shop.Add(new Toy("Twine", 2, 5, 0, 10));
+                shop.Add(new Toy("Hoop", 5, 10, 0, 20)); 
                 shop.Add(new Food("Meat", 10, 2, 0, -20));
                 shop.Add(new Food("Fruit", 5, 1, 0, -10));
                 shop.Add(new Food("Plant", 2, 1, 0, -5));
@@ -43,10 +47,6 @@ namespace ObjectOrientatedProgramming_Assessment011
                 shop.Add(new Medicine("Med", 30, 1, 0, -10, 100));
                 shop.Add(new Medicine("Lrg", 40, 1, 0, -10, 200));
                 shop.Add(new Medicine("Full", 50, 1, 0, -10, 500));
-                shop.Add(new Toy("Ball", 5, 10, 0, 20));
-                shop.Add(new Toy("Stick", 1, 5, 0, 10));
-                shop.Add(new Toy("Twine", 2, 5, 0, 10));
-                shop.Add(new Toy("Hoop", 5, 10, 0, 20));
                 #endregion
 
                 //create inventory from shop (all with 0 quantity)
@@ -514,7 +514,7 @@ namespace ObjectOrientatedProgramming_Assessment011
 
                 else if (1 <= key && key <= 4)
                 {
-                    rooms[currentRoom].PetUseItem(inventory[selectedInvResource+key-1]);
+                    inventory[selectedInvResource + key - 1] = rooms[currentRoom].PetUseItem(inventory[selectedInvResource + key - 1]);
                 }
             }
 

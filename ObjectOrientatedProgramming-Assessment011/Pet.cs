@@ -76,22 +76,33 @@ namespace ObjectOrientatedProgramming_Assessment011
             }
         }
 
-        public void UseItem(Resource resource)
+        public Resource UseItem(Resource resource)
         {
-            Dictionary<string, int> petStats = new Dictionary<string, int>()
+            if (resource.Quantity > 0)
             {
-                { "Health", Health },
-                { "Hunger", Hunger },
-                { "Mood", Mood }
-            };
+                Dictionary<string, int> petStats = new Dictionary<string, int>()
+                {
+                    { "Health", Health },
+                    { "Hunger", Hunger },
+                    { "Mood", Mood }
+                };
 
-            petStats = resource.Effect(petStats);
-            if (petStats["Health"] > maxHealth) { Health = maxHealth; }
-            else { Health = petStats["Health"]; }
-            if (petStats["Hunger"] < minHunger) { Hunger = minHunger; }
-            else { Hunger = petStats["Hunger"]; }
-            if (petStats["Mood"] > maxMood) { Mood = maxMood; }
-            else { Mood = petStats["Mood"]; }
+                petStats = resource.Effect(petStats);
+                if (petStats["Health"] > maxHealth) { Health = maxHealth; }
+                else { Health = petStats["Health"]; }
+                if (petStats["Hunger"] < minHunger) { Hunger = minHunger; }
+                else { Hunger = petStats["Hunger"]; }
+                if (petStats["Mood"] > maxMood) { Mood = maxMood; }
+                else { Mood = petStats["Mood"]; }
+
+                resource.Uses -= 1;
+                if (resource.Uses <= 0)
+                {
+                    resource.Quantity -= 1;
+                }
+            }
+
+            return resource;
         }
 
         public virtual void Display()

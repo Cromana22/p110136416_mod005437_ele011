@@ -16,6 +16,7 @@ namespace ObjectOrientatedProgramming_Assessment011
         {
             AmbientTemp = AppHelpers.rngNo.Next(AppHelpers.BottomTemp, AppHelpers.TopTemp);
             CurrentTemp = AmbientTemp;
+            VentSign = " ";
 
             //select a random pet type...
             string petType = AppHelpers.pets[AppHelpers.rngNo.Next(0, AppHelpers.pets.Count-1)];
@@ -86,9 +87,10 @@ namespace ObjectOrientatedProgramming_Assessment011
             APet.DecreaseMood();
         }
 
-        public void PetUseItem(Resource resource)
+        public Resource PetUseItem(Resource resource)
         {
-                APet.UseItem(resource);
+                resource = APet.UseItem(resource);
+                return resource;
         }
 
         public void Display()
