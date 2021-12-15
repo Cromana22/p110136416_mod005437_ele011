@@ -38,19 +38,31 @@ namespace ObjectOrientatedProgramming_Assessment011
                 shop.Add(new Toy("Ball", 5, 10, 0, 20));
                 shop.Add(new Toy("Stick", 1, 5, 0, 10));
                 shop.Add(new Toy("Twine", 2, 5, 0, 10));
-                shop.Add(new Toy("Hoop", 5, 10, 0, 20)); 
+                shop.Add(new Toy("Hoop", 5, 10, 0, 20));
                 shop.Add(new Food("Meat", 10, 2, 0, -20));
                 shop.Add(new Food("Fruit", 5, 1, 0, -10));
                 shop.Add(new Food("Plant", 2, 1, 0, -5));
                 shop.Add(new Food("Fish", 2, 2, 0, -3));
-                shop.Add(new Medicine("Sml", 20, 1, 0, -10, 50));
-                shop.Add(new Medicine("Med", 30, 1, 0, -10, 100));
-                shop.Add(new Medicine("Lrg", 40, 1, 0, -10, 200));
-                shop.Add(new Medicine("Full", 50, 1, 0, -10, 500));
+                shop.Add(new Medicine("Sml", 20, 1, 0, 50, -10));
+                shop.Add(new Medicine("Med", 30, 1, 0, 100, -10));
+                shop.Add(new Medicine("Lrg", 40, 1, 0, 200, -10));
+                shop.Add(new Medicine("Full", 50, 1, 0, 500, -10));
                 #endregion
 
-                //create inventory from shop (all with 0 quantity)
-                inventory = shop;
+                #region - create inventory
+                inventory.Add(new Toy("Ball", 5, 10, 0, 20));
+                inventory.Add(new Toy("Stick", 1, 5, 0, 10));
+                inventory.Add(new Toy("Twine", 2, 5, 0, 10));
+                inventory.Add(new Toy("Hoop", 5, 10, 0, 20));
+                inventory.Add(new Food("Meat", 10, 2, 0, -20));
+                inventory.Add(new Food("Fruit", 5, 1, 0, -10));
+                inventory.Add(new Food("Plant", 2, 1, 0, -5));
+                inventory.Add(new Food("Fish", 2, 2, 0, -3));
+                inventory.Add(new Medicine("Sml", 20, 1, 0, 50, -10));
+                inventory.Add(new Medicine("Med", 30, 1, 0, 100, -10));
+                inventory.Add(new Medicine("Lrg", 40, 1, 0, 200, -10));
+                inventory.Add(new Medicine("Full", 50, 1, 0, 500, -10));
+                #endregion            }
             }
         }
 
